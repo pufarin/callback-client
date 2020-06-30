@@ -3,7 +3,6 @@ package net.gabrielkovacs.callbackclient.entities;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Entity
@@ -14,7 +13,7 @@ public class ClientCallBackWithDate {
     }
 
     public ClientCallBackWithDate(String uuid, String call_back, Timestamp timeStamp, String eventName, String parameter
-            , Timestamp timeReceived) {
+            , Long timeReceived) {
         this.uuid = uuid;
         this.call_back = call_back;
         this.timeStamp = timeStamp;
@@ -34,7 +33,7 @@ public class ClientCallBackWithDate {
 
     private String parameter;
 
-    private Timestamp timeReceived;
+    private Long timeReceived;
 
     public String getParameter() { return parameter; }
 
@@ -72,11 +71,11 @@ public class ClientCallBackWithDate {
         this.call_back = call_back;
     }
 
-    public Timestamp getTimeReceived() {
+    public Long getTimeReceived() {
         return timeReceived;
     }
 
-    public void setTimeReceived(Timestamp timeReceived) {
+    public void setTimeReceived(Long timeReceived) {
         this.timeReceived = timeReceived;
     }
 

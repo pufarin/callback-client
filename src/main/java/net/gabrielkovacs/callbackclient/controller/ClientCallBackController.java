@@ -26,7 +26,7 @@ public class ClientCallBackController {
     public ResponseEntity<ClientCallBack> pushToWebHook(@RequestBody ClientCallBack cCB){
         Date date= new Date();
         ClientCallBackWithDate clientCallBackWithDate = new ClientCallBackWithDate(cCB.getUuid(),cCB.getCall_back(),
-                cCB.getTimeStamp(),cCB.getEventName(),cCB.getParameter(),new Timestamp(date.getTime()));
+                cCB.getTimeStamp(),cCB.getEventName(),cCB.getParameter(),new Timestamp(date.getTime()).getTime());
         clientCallBackRepository.save(clientCallBackWithDate);
         return new ResponseEntity<ClientCallBack>(cCB, HttpStatus.CREATED);
     }
