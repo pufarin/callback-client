@@ -22,7 +22,7 @@ public class ClientCallBackController {
         this.clientCallBackRepository = clientCallBackRepository;
     }
 
-    @PostMapping("webhook")
+    @PostMapping("data")
     public ResponseEntity<ClientCallBack> pushToWebHook(@RequestBody ClientCallBack cCB){
         Date date= new Date();
         ClientCallBackWithDate clientCallBackWithDate = new ClientCallBackWithDate(cCB.getUuid(),cCB.getCall_back(),
