@@ -2,11 +2,13 @@ package net.gabrielkovacs.callbackclient.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Entity
-public class ClientCallBackWithDate implements Serializable {
+@Table(name="incoming")
+public class ClientCallBackWithDate {
 
     public ClientCallBackWithDate() {
     }
